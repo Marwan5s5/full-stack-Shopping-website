@@ -1,0 +1,416 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login.html">
+    <title>login</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-P6B5g5v5o5ZG27IdZLnq3AWW8NvJUNdmdVqGJh3a7EzsOWqlf/HG7RkMZ1LhJ7VlhbvJfCnVQ2Ani4f4x4xtyw=="
+        crossorigin="anonymous" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hind:wght@300&family=Pacifico&family=Raleway:ital,wght@1,300&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+
+    <style>
+    .logo{
+  width: 70px;
+  height: auto;
+}
+.nav-link {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  margin-right: 20px;
+}
+
+.nav-link:hover {
+  color: #fff;
+}
+
+.bg-dark-pink {
+  background-color: #000000;
+}
+
+.navbar-dark .navbar-brand, 
+.navbar-dark .navbar-nav .nav-link {
+  color: #fff;
+}
+
+.nav-link {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  margin-right: 20px;
+  position: relative;
+}
+
+.nav-link:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -3px;
+  left: 0;
+  background-color: #eb3c59;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.nav-link:hover:before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+        .carousel-item img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 0;
+
+        }
+
+        .navbar-menu li a {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        /* responsive styles */
+        @media (max-width: 767px) {
+            .navbar {
+                height: auto;
+            }
+
+
+            .carousel-item img {
+                max-height: 500px;
+                /* reduce height for smaller screens */
+            }
+
+            .navbar-menu {
+                flex-direction: column;
+                margin-top: 10px;
+                /* added for spacing on smaller screens */
+            }
+
+            .navbar-menu li {
+                margin: 10px 0;
+            }
+
+            .navbar-logo {
+                margin-top: 10px;
+                /* added for spacing on smaller screens */
+            }
+        }
+
+        .lg {
+            height: 100px;
+            width: 100px;
+        }
+
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-100%);
+            }
+
+            to {
+                transform: translateY(0);
+            }
+        }
+
+
+        #login-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            padding: 2em;
+            background-color: #1c1c1c;
+            border-radius: 25px;
+            transition: .4s ease-in-out;
+            width: 420px;
+            height: 40rem;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            text-align: center;
+            box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.6);
+
+        }
+
+        .container2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 150px;
+        }
+
+        .container1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #login-form input[type="text"],
+        #login-form input[type="email"],
+        #login-form input[type="password"] {
+            background-color: #2c2c2c;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            width: 100%;
+            color: rgb(235, 60, 89);
+        }
+
+
+        #login-form:hover {
+            transform: scale(1.05);
+            border: 1px solid black;
+            box-shadow: 0 0 20px 5px rgba(235, 60, 89, 0.8);
+        }
+
+        #heading {
+            text-align: center;
+            margin-bottom: 25px;
+            margin-top: 25px;
+            color: rgb(255, 255, 255);
+            font-size: 30px;
+            font-family: 'Pacifico', cursive;
+        }
+
+        .field {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5em;
+            border-radius: 25px;
+            padding: 0.6em;
+            border: none;
+            outline: none;
+            color: white;
+            background-color: #171717;
+            box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+        }
+
+        .input-icon {
+            height: 1.3em;
+            width: 1.3em;
+            fill: white;
+        }
+
+        .input-field {
+            background: none;
+            border: none;
+            outline: none;
+            width: 100%;
+            color: #d3d3d3;
+        }
+
+        #login-form .btn {
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            margin-top: 2.5em;
+        }
+
+        .button1 {
+            padding: 0.5em;
+            padding-left: 1.1em;
+            padding-right: 1.1em;
+            border-radius: 5px;
+            margin-right: 0.5em;
+            border: none;
+            outline: none;
+            transition: .4s ease-in-out;
+            background-color: #252525;
+            color: white;
+        }
+
+        .button1:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .button2 {
+            padding: 0.5em;
+            padding-left: 2.3em;
+            padding-right: 2.3em;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            transition: .4s ease-in-out;
+            background-color: #252525;
+            color: white;
+        }
+
+        .button2:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .button3 {
+            margin-bottom: 3em;
+            padding: 0.5em;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            transition: .4s ease-in-out;
+            background-color: #252525;
+            color: white;
+            width: 265px;
+        }
+
+        .button3:hover {
+            background-color: red;
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+   
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark-pink fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">
+            <img src="logo2.png" alt="" class="logo">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#services">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#shop">Shop</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#support">Support</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#events">Events</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#privacy">Privacy Policy</a>
+              </li>
+  
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    <div class="container2">
+        <form id="login-form">
+            <p id="heading">Login</p>
+            <div id="error-message"></div>
+            <div class="field">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z" />
+                </svg>
+                <input autocomplete="on" placeholder="Username" class="input-field" type="text" id="username">
+            </div>
+
+            <div class="field">
+                <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M13.106 7.222c0-2.967-2.249-5.032-5.482-5.032-3.35 0-5.646 2.318-5.646 5.702 0 3.493 2.235 5.708 5.762 5.708.862 0 1.689-.123 2.304-.335v-.862c-.43.199-1.354.328-2.29.328-2.926 0-4.813-1.88-4.813-4.798 0-2.844 1.921-4.881 4.594-4.881 2.735 0 4.608 1.688 4.608 4.156 0 1.682-.554 2.769-1.416 2.769-.492 0-.772-.28-.772-.76V5.206H8.923v.834h-.11c-.266-.595-.881-.964-1.6-.964-1.4 0-2.378 1.162-2.378 2.823 0 1.737.957 2.906 2.379 2.906.8 0 1.415-.39 1.709-1.087h.11c.081.67.703 1.148 1.503 1.148 1.572 0 2.57-1.415 2.57-3.643zm-7.177.704c0-1.197.54-1.907 1.456-1.907.93 0 1.524.738 1.524 1.907S8.308 9.84 7.371 9.84c-.895 0-1.442-.725-1.442-1.914z">
+                    </path>
+                </svg>
+                <input autocomplete="on" placeholder="E-mail" class="input-field" type="text" id="email">
+            </div>
+
+
+            <div class="field">
+                <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z">
+                    </path>
+                </svg>
+                <input placeholder="Password" class="input-field" type="password" id="password">
+            </div>
+
+            <div class="btn">
+               
+                   <button class="button1"><a href="afterloggingin.html" style="text-decoration:none; color:white;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></button>
+
+                   <button class="button2"><a href="signup.html" style="text-decoration:none; color:white;">Sign Up</a></button>
+               
+            </div>
+            <button class="button3">Forgot Password</button>
+        </form>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById("login-form");
+        const errorMessage = document.getElementById("error-message");
+
+        loginForm.addEventListener("submit", function (event) {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const email = document.getElementById("email").value;
+
+            let errors = [];
+
+            if (username.length < 3) {
+                errors.push("Username must be at least 3 characters long.");
+            }
+
+            if (password.length < 6) {
+                errors.push("Password must be at least 6 characters long.");
+            }
+
+            if (!/\S+@\S+\.\S+/.test(email)) {
+                errors.push("Please enter a valid email address.");
+            }
+
+            if (errors.length > 0) {
+                event.preventDefault();
+                errorMessage.innerHTML = errors.join("<br>");
+                errorMessage.style.color = "red";
+            } else {
+                errorMessage.innerHTML = "";
+                errorMessage.style.color = "";
+            }
+        });
+
+        
+        loginForm.addEventListener("submit", function (event) {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const email = document.getElementById("email").value;
+
+            if (username === "" || password === "" || email === "") {
+                event.preventDefault();
+                errorMessage.textContent = "Please fill out all fields.";
+            }
+        });
+        const signUpButton = document.querySelector(".button2");
+
+        signUpButton.addEventListener("click", function (event) {
+            errorMessage.textContent = "";
+        });
+
+    </script>
+
+
+</body>
+
+</html>

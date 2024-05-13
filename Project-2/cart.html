@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="productScreen_style.css">
+    <title>Project</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hind:wght@300&family=Pacifico&family=Raleway:ital,wght@1,300&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <nav class="mainnav">
+        <div class="logo" title="Home">
+            <a href="index.html"><img src="text-1679045208074.png" alt="Logo"></a>
+        </div>
+
+        <div class="search" style="display: flex; align-items: center;">
+            <input type="text" placeholder="Search Snazzy.eg" title="Search">
+            <button type="submit" title="Submit" class="srr"><i class="fa fa-search sk"></i>
+            </button>
+
+
+
+            <div class="dropdown">
+                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Categories
+                </button>
+
+                <ul class="dropdown-menu nav-search-dropdown ">
+                    <li><a class="dropdown-item" href="Men_Clothing.html">Men's Clothing</a></li>
+                    <li><a class="dropdown-item" href="#">Women's Clothing</a></li>
+                    <li><a class="dropdown-item" href="#">Kid's Clothing</a></li>
+                    <li><a class="dropdown-item" href="#">Shoes</a></li>
+                    <li><a class="dropdown-item" href="#">Accessories</a></li>
+                    <li><a class="dropdown-item" href="#">Jewelry</a></li>
+                    <li><a class="dropdown-item" href="#">Bags & Backpacks</a></li>
+                    <li><a class="dropdown-item" href="#">Sunglasses & Eyewear</a></li>
+                    <li><a class="dropdown-item" href="#">Watches</a></li>
+                    <li><a class="dropdown-item" href="#">Hats & Caps</a></li>
+                    <li><a class="dropdown-item" href="#">Scarves & Wraps</a></li>
+                    <li><a class="dropdown-item" href="#">Socks & Hosiery</a></li>
+                    <li><a class="dropdown-item" href="#">Underwear & Sleepwear</a></li>
+                    <li><a class="dropdown-item" href="#">Activewear</a></li>
+                    <li><a class="dropdown-item" href="#">Swimwear</a></li>
+                    <li><a class="dropdown-item" href="#">Plus Size Clothing</a></li>
+                    <li><a class="dropdown-item" href="#">Petite Clothing</a></li>
+                    <li><a class="dropdown-item" href="#">Maternity Clothing</a></li>
+                    <li><a class="dropdown-item" href="#">Vintage Clothing</a></li>
+                    <li><a class="dropdown-item" href="#">Formalwear</a></li>
+                    <li><a class="dropdown-item" href="#">Outerwear & Jackets</a></li>
+                    <li><a class="dropdown-item" href="#">Loungewear & Pajamas</a></li>
+                    <li><a class="dropdown-item" href="#">Costumes & Dress-up</a></li>
+                </ul>
+
+            </div>
+        </div>
+
+        <div class="lang-dropdown">
+            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                EN
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">العربية - AR</a></li>
+                <li><a class="dropdown-item" href="#">English - EN</a></li>
+            </ul>
+        </div>
+
+
+
+        <div class="orders">
+            <button title="Orders">Orders</button>
+        </div>
+
+        <div class="cart">
+            <button title="Cart active" ><i class="fa fa-shopping-cart"></i></button>
+        </div>
+    </nav>
+    </nav>
+    <div class="addTocart">
+        <a href="#" class="credit">
+          <button class="buy-buttonn" type="button" onclick="addToCart()">Add to cart</button>
+        </a>
+      </div>
+      
+      <div class="cart">
+        <a href="cart.html">
+          <button title="Cart">
+            <i class="fa fa-shopping-cart"></i>
+            <span class="cart-badge">0</span>
+          </button>
+        </a>
+      </div>
+      
+      <div id="cart-screen"></div>
+      
+    <script>
+        // array to hold the products
+let cartProducts = [];
+
+function addToCart() {
+  // get the product information
+  let product = {
+    name: "Product Name",
+    price: 10.99,
+    quantity: 1
+  };
+  
+  // add the product to the cart array
+  cartProducts.push(product);
+  
+  // update the cart badge
+  let cartBadge = document.querySelector(".cart-badge");
+  let quantity = parseInt(cartBadge.innerText);
+  cartBadge.innerText = quantity + 1;
+  
+  // update the cart screen
+  let cartScreen = document.getElementById("cart-screen");
+  cartScreen.innerHTML += `
+    <div>
+      <p>${product.name}</p>
+      <p>Price: $${product.price.toFixed(2)}</p>
+      <p>Quantity: ${product.quantity}</p>
+    </div>
+  `;
+}
+
+    </script>
+    
+    <!-- Bootstrap scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

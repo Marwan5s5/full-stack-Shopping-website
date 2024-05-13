@@ -1,0 +1,289 @@
+<div class="dwn">
+    <h1 class="new">Newest Releases</h1>
+
+    <div class="category-list">
+      <ul class="mylist">
+        <li id="lost" class="active" data-category="all">All</li>
+        <li id="lost" data-category="shirts">Shirts</li>
+        <li id="lost" data-category="shoes">Shoes</li>
+        <li id="lost" data-category="fitness">Fitness</li>
+        <li id="lost" data-category="summer">Summer</li>
+      </ul>
+    </div>
+
+    <div class="image-list">
+      <div class="image" data-category="shirts"><img src="shirt1.jpg"><button class="imgBTN">Buy Now</button>
+        <h3 class="imgdesc">Model 1</h3>
+        <h4 class="price">$219.00</h4>
+      </div>
+      <div class="image" data-category="shirts"><img src="shirt1.jpg"><button class="imgBTN">Buy Now</button>
+        <h3 class="imgdesc">Model 1</h3>
+        <h4 class="price">$219.00</h4>
+      </div>
+      <div class="image" data-category="shirts"><img src="shirt1.jpg"><button class="imgBTN">Buy Now</button>
+        <h3 class="imgdesc">Model 1</h3>
+        <h4 class="price">$219.00</h4>
+      </div>
+      <!-- <div class="image" data-category="shirts"><img src="shose2.jpg"><button class="imgBTN">Buy Now</button></div>
+  <div class="image" data-category="shoes"><img src="shose1.jpg"><button class="imgBTN">Buy Now</button></div>
+  <div class="image" data-category="shoes"><img src="shose2.jpg"><button class="imgBTN">Buy Now</button></div>
+  <div class="image" data-category="fitness"><img src="short1.jpg"><button class="imgBTN">Buy Now</button></div>
+  <div class="image" data-category="summer"><img src="short1.jpg"><button class="imgBTN">Buy Now</button></div>
+  <div class="image" data-category="summer"><img src="shose1.jpg"><button class="imgBTN">Buy Now</button></div> -->
+    </div>
+  </div>
+
+  <div class="arrows">
+    <span class="prev"><i class="fas fa-chevron-left"></i></span>
+    <span class="next"><i class="fas fa-chevron-right"></i></span>
+  </div>
+
+
+
+  <script>
+
+
+    const categoryList = document.querySelector('.category-list');
+    const imageList = document.querySelector('.image-list');
+    const categories = categoryList.querySelectorAll('li');
+    const images = imageList.querySelectorAll('.image');
+
+    categories.forEach((category) => {
+      category.addEventListener('click', () => {
+        categories.forEach((cat) => {
+          cat.classList.remove('active');
+        });
+        category.classList.add('active');
+
+        const categoryValue = category.getAttribute('data-category');
+        images.forEach((image) => {
+          if (image.getAttribute('data-category') === categoryValue || categoryValue === 'all') {
+            image.classList.add('active');
+          } else {
+            image.classList.remove('active');
+          }
+        });
+      });
+    });
+
+
+  </script>
+
+
+
+
+.category-list {
+    display: inline-block;
+    
+    margin-bottom: 20px;
+  }
+
+  .dwn{
+    margin-left: 270px;
+    
+  }
+ 
+  #lost{
+    font-size: 15px;
+    font-weight: 500;
+    padding-left: 1px;
+    padding-right: 1px;
+    
+  }
+  .mylist{
+    border-bottom: 1px solid #ccc;
+   width: 1353px;
+  }
+  
+  .category-list ul {
+    list-style: none;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .category-list li {
+    margin: 0 10px;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    
+  }
+  
+  .category-list li.active {
+    color: #000000;
+    font-weight: light;
+  }
+  
+  .image-list {
+    display: inline-block;
+    flex-wrap: wrap;
+    
+  }
+  
+  .image {
+    display: none;
+    margin: 10px;
+    position: relative;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    width: 400px;
+    height: 400px;
+    
+  }
+  
+  .image img {
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .image.active {
+    display: block;
+  }
+
+  .new{
+    padding-top: 100px;
+    padding-bottom: 40px;
+    font-weight: 300;
+  }
+  .category-list {
+    display: flex;
+    justify-content: left;
+    margin-bottom: 20px;
+    
+  }
+
+  .category-list ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  
+
+  .image-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    display: flex;
+    flex-wrap: wrap
+  }
+
+
+
+  .image img {
+    max-width: 100%;
+    height: auto;
+    transition: all 0.2s ease-in-out;
+    filter: blur(0);
+  }
+
+  .image:hover img {
+    filter: blur(3px);
+  }
+
+  .image button {
+    position: absolute;
+    bottom: 50%;
+    top: 50%;
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 50px;
+    padding: 10px 20px;
+    background-color: #eb3c59;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: 400;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  .image:hover button {
+    opacity: 1;
+    transform: translate(-50%, -5%);
+  }
+  
+  .image button:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  
+
+  .image:hover button {
+    display: block;
+  }
+
+  .image button:hover {
+    background-color: #fff;
+    color: #c0392b;
+  }
+  .category-list {
+    margin-bottom: 20px;
+  }
+  
+
+  .category-list li.active {
+    color: #ff0000;
+  }
+  
+  
+
+  
+  .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+
+  .image:hover img {
+    filter: blur(3px);
+  }
+  
+  .image:hover button {
+    opacity: 1;
+  }
+
+
+  .image-list {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+  
+  .image {
+    flex: 0 0 auto;
+    margin-left: 25px;
+  }
+  
+  .image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  button {
+    margin-top: 10px;
+  }
+  
+
+  /* productsDESCRIPTION */
+  .imgdesc{
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+.price{
+  font-size: 22px;
+  font-weight: 600;
+  color: #eb3c59;
+}
